@@ -11,7 +11,7 @@ class School
     if @roster.include?(grade)
       @roster[grade] << name 
     else 
-      @roster[grade] = [] 
+      @roster[grade] = []
       @roster[grade] << name 
     end 
   end 
@@ -21,9 +21,8 @@ class School
   end 
   
   def sort 
-    @roster.map do |grade, name|
-      name.sort!
+    @roster.each do |grade, name|
+      @roster[grade] = name.sort 
     end
-    @roster
   end 
 end 
